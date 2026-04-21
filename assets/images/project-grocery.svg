@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="420" viewBox="0 0 700 420" role="img" aria-labelledby="title desc">
+  <title id="title">Grocery Inventory Visual</title>
+  <desc id="desc">Stylized basket and produce illustration for grocery management project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe08f"/>
+      <stop offset="1" stop-color="#f6b450"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="700" height="420" fill="#f7efe0"/>
+  <rect x="0" y="0" width="700" height="250" fill="url(#bg)"/>
+
+  <ellipse cx="170" cy="120" rx="85" ry="78" fill="#9bc43f"/>
+  <ellipse cx="270" cy="122" rx="86" ry="80" fill="#f59a20"/>
+  <ellipse cx="360" cy="118" rx="86" ry="78" fill="#f0c94c"/>
+
+  <path d="M122 162 H432 C450 162 464 176 464 194 V314 C464 332 450 346 432 346 H122 C104 346 90 332 90 314 V194 C90 176 104 162 122 162 Z" fill="#f0c173" stroke="#d99a47" stroke-width="6"/>
+
+  <g fill="#fff5dd" stroke="#d2a269" stroke-width="3">
+    <rect x="132" y="206" width="70" height="70" rx="12"/>
+    <rect x="220" y="206" width="70" height="70" rx="12"/>
+    <rect x="308" y="206" width="70" height="70" rx="12"/>
+    <rect x="176" y="286" width="70" height="44" rx="10"/>
+    <rect x="264" y="286" width="70" height="44" rx="10"/>
+  </g>
+
+  <path d="M112 190 H442" stroke="#deaa63" stroke-width="9" stroke-linecap="round"/>
+</svg>

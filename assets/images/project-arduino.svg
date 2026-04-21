@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="420" viewBox="0 0 700 420" role="img" aria-labelledby="title desc">
+  <title id="title">Arduino LED Matrix Visual</title>
+  <desc id="desc">Circuit board with LED matrix panel for Arduino project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c3f4c"/>
+      <stop offset="1" stop-color="#1b5b67"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="700" height="420" fill="url(#bg)"/>
+
+  <rect x="70" y="72" width="560" height="276" rx="18" fill="#1a3542" stroke="#52becf" stroke-width="6"/>
+  <rect x="104" y="102" width="492" height="126" rx="8" fill="#11212a" stroke="#2f7081"/>
+
+  <g fill="#b5f5ff" opacity="0.85">
+    <rect x="116" y="116" width="14" height="14"/>
+    <rect x="136" y="116" width="14" height="14"/>
+    <rect x="156" y="116" width="14" height="14"/>
+    <rect x="176" y="116" width="14" height="14"/>
+    <rect x="196" y="116" width="14" height="14"/>
+    <rect x="216" y="116" width="14" height="14"/>
+    <rect x="236" y="116" width="14" height="14"/>
+    <rect x="256" y="116" width="14" height="14"/>
+    <rect x="276" y="116" width="14" height="14"/>
+    <rect x="296" y="116" width="14" height="14"/>
+    <rect x="316" y="116" width="14" height="14"/>
+    <rect x="336" y="116" width="14" height="14"/>
+    <rect x="356" y="116" width="14" height="14"/>
+    <rect x="376" y="116" width="14" height="14"/>
+    <rect x="396" y="116" width="14" height="14"/>
+    <rect x="416" y="116" width="14" height="14"/>
+    <rect x="436" y="116" width="14" height="14"/>
+    <rect x="456" y="116" width="14" height="14"/>
+    <rect x="476" y="116" width="14" height="14"/>
+    <rect x="496" y="116" width="14" height="14"/>
+    <rect x="516" y="116" width="14" height="14"/>
+    <rect x="536" y="116" width="14" height="14"/>
+
+    <rect x="116" y="140" width="14" height="14"/>
+    <rect x="156" y="140" width="14" height="14"/>
+    <rect x="196" y="140" width="14" height="14"/>
+    <rect x="236" y="140" width="14" height="14"/>
+    <rect x="276" y="140" width="14" height="14"/>
+    <rect x="316" y="140" width="14" height="14"/>
+    <rect x="356" y="140" width="14" height="14"/>
+    <rect x="396" y="140" width="14" height="14"/>
+    <rect x="436" y="140" width="14" height="14"/>
+    <rect x="476" y="140" width="14" height="14"/>
+    <rect x="516" y="140" width="14" height="14"/>
+
+    <rect x="116" y="164" width="14" height="14"/>
+    <rect x="136" y="164" width="14" height="14"/>
+    <rect x="156" y="164" width="14" height="14"/>
+    <rect x="196" y="164" width="14" height="14"/>
+    <rect x="216" y="164" width="14" height="14"/>
+    <rect x="236" y="164" width="14" height="14"/>
+    <rect x="316" y="164" width="14" height="14"/>
+    <rect x="336" y="164" width="14" height="14"/>
+    <rect x="356" y="164" width="14" height="14"/>
+    <rect x="436" y="164" width="14" height="14"/>
+    <rect x="456" y="164" width="14" height="14"/>
+    <rect x="476" y="164" width="14" height="14"/>
+    <rect x="516" y="164" width="14" height="14"/>
+    <rect x="536" y="164" width="14" height="14"/>
+
+    <rect x="116" y="188" width="14" height="14"/>
+    <rect x="176" y="188" width="14" height="14"/>
+    <rect x="236" y="188" width="14" height="14"/>
+    <rect x="296" y="188" width="14" height="14"/>
+    <rect x="356" y="188" width="14" height="14"/>
+    <rect x="416" y="188" width="14" height="14"/>
+    <rect x="476" y="188" width="14" height="14"/>
+    <rect x="536" y="188" width="14" height="14"/>
+  </g>
+
+  <rect x="106" y="248" width="160" height="74" rx="10" fill="#12303b" stroke="#2c7282"/>
+  <rect x="284" y="248" width="308" height="74" rx="10" fill="#12303b" stroke="#2c7282"/>
+  <circle cx="136" cy="285" r="15" fill="#67e0ef"/>
+  <circle cx="176" cy="285" r="15" fill="#67e0ef"/>
+  <circle cx="216" cy="285" r="15" fill="#67e0ef"/>
+</svg>

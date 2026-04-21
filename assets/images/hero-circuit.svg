@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Circuit Pulse Banner</title>
+  <desc id="desc">Abstract glowing circuit lines on a blue background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b2e46"/>
+      <stop offset="0.5" stop-color="#0d4f73"/>
+      <stop offset="1" stop-color="#1a7aa0"/>
+    </linearGradient>
+    <linearGradient id="trace" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#6ee8ff"/>
+      <stop offset="0.55" stop-color="#b3ffff"/>
+      <stop offset="1" stop-color="#6ec4ff"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="520" rx="36" fill="url(#bg)"/>
+
+  <g opacity="0.18" stroke="#8ce6ff" stroke-width="1.4" fill="none">
+    <path d="M0 72 H1200"/>
+    <path d="M0 130 H1200"/>
+    <path d="M0 188 H1200"/>
+    <path d="M0 246 H1200"/>
+    <path d="M0 304 H1200"/>
+    <path d="M0 362 H1200"/>
+    <path d="M0 420 H1200"/>
+    <path d="M88 0 V520"/>
+    <path d="M238 0 V520"/>
+    <path d="M388 0 V520"/>
+    <path d="M538 0 V520"/>
+    <path d="M688 0 V520"/>
+    <path d="M838 0 V520"/>
+    <path d="M988 0 V520"/>
+    <path d="M1138 0 V520"/>
+  </g>
+
+  <g stroke="url(#trace)" stroke-width="6" fill="none" filter="url(#softGlow)">
+    <path d="M84 258 H286 L360 184 H588 L700 316 H1112"/>
+    <path d="M130 188 H320 L420 286 H642 L744 154 H1080"/>
+    <path d="M116 338 H274 L364 270 H584 L724 378 H1028"/>
+  </g>
+
+  <g fill="#baf8ff" filter="url(#softGlow)">
+    <circle cx="286" cy="258" r="9"/>
+    <circle cx="360" cy="184" r="9"/>
+    <circle cx="588" cy="184" r="9"/>
+    <circle cx="700" cy="316" r="9"/>
+    <circle cx="420" cy="286" r="9"/>
+    <circle cx="744" cy="154" r="9"/>
+    <circle cx="274" cy="338" r="9"/>
+    <circle cx="584" cy="270" r="9"/>
+    <circle cx="724" cy="378" r="9"/>
+  </g>
+
+  <rect x="32" y="32" width="1136" height="456" rx="28" fill="none" stroke="rgba(196,245,255,0.34)" stroke-width="2"/>
+</svg>
