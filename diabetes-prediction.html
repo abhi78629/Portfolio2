@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabetes Prediction using Random Forest | Aman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .dev-journey .journey-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .journey-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .journey-card.active {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .step-label {
+      background-color: #f0f0f0;
+      border-radius: 50%;
+      min-width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    .journey-card.active .step-label {
+      background-color: #5d5fef;
+      color: white;
+    }
+    .journey-content h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    .journey-content p {
+      margin: 0;
+      color: #555;
+    }
+    .reflections-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    @media (min-width: 992px) {
+      .reflections-grid {
+        grid-template-columns: 1.5fr 1fr;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html#home">Aman</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+      <nav id="site-menu" class="site-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#projects">Work</a>
+        <a class="nav-link" href="index.html#skills">Skills</a>
+        <a class="nav-link" href="index.html#contact">Contact</a>
+        <a class="btn btn-primary hire-btn" href="index.html#contact">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-details">
+    <div class="container project-header-section reveal is-visible">
+      <a href="index.html#projects" class="back-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Portfolio
+      </a>
+      
+      <div class="project-tags">
+        <span class="tag tag-purple">Machine Learning - Random Forest</span>
+      </div>
+      
+      <h1>Diabetes Prediction using Random Forest</h1>
+      
+      <div class="author-info" style="align-items: center; margin-bottom: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+        <div class="author-text">
+          <p class="author-role" style="font-size: 1.1rem; color: var(--text-color); margin: 0;"><span style="color: #5d5fef; font-weight: 600;">My Role : Member 2</span> — Responsible for Random Forest Algorithm implementation + Feature Importance Analysis.</p>
+        </div>
+        
+        <div class="project-actions" style="margin-top: 0;">
+          <a href="https://github.com/" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            GitHub 
+          </a>
+          <a href="#" class="btn" style="background-color: #e0e0f8; color: #5d5fef; display: inline-flex; align-items: center; padding: 0.8rem 1.5rem; border-radius: 30px; font-weight: 600; text-decoration: none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Full Report
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container stats-strip reveal" style="background-color: #f9f9fb; border-radius: 16px; padding: 2rem;">
+      <div class="stat-card">
+        <p class="stat-label">ROC-AUC</p>
+        <p class="stat-value text-purple">0.9429</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">ITERATIVE CYCLES</p>
+        <p class="stat-value">5 Versions</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">FOREST DEPTH</p>
+        <p class="stat-value">500 Trees</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">DATASET SIZE</p>
+        <p class="stat-value">768 Records</p>
+      </div>
+    </div>
+
+    <section class="what-is-project section-pad">
+      <div class="container wip-grid reveal" style="gap: 60px;">
+        <div class="wip-content">
+          <h2>What is this project?</h2>
+          <p>This project addresses the critical need for early diabetes detection through predictive modeling. By leveraging ensemble learning methods, specifically the Random Forest algorithm, we achieved high predictive accuracy while maintaining clinical interpretability. The model analyzes physiological markers to provide risk assessments.</p>
+          <img src="assets/images/project-diabetes.svg" alt="DNA and Technology Visual" style="width: 100%; max-width: 400px; border-radius: 20px; margin-top: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        </div>
+        <div class="wip-table-wrapper" style="background-color: #f9f9fb; border-radius: 20px; padding: 30px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5d5fef" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            <h3 style="margin: 0;">Dataset Features</h3>
+          </div>
+          <table class="feature-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="text-align: left; border-bottom: 1px solid #ddd;">
+                <th style="padding: 12px 0;">Feature</th>
+                <th style="padding: 12px 0;">Description</th>
+                <th style="padding: 12px 0;">Unit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 15px 0; font-weight: 600;">Glucose</td>
+                <td style="padding: 15px 0; color: #555;">Plasma glucose concentration</td>
+                <td style="padding: 15px 0; color: #888;">mg/dL</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 15px 0; font-weight: 600;">BMI</td>
+                <td style="padding: 15px 0; color: #555;">Body mass index</td>
+                <td style="padding: 15px 0; color: #888;">kg/m²</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 15px 0; font-weight: 600;">Age</td>
+                <td style="padding: 15px 0; color: #555;">Patient biological age</td>
+                <td style="padding: 15px 0; color: #888;">Years</td>
+              </tr>
+              <tr>
+                <td style="padding: 15px 0; font-weight: 600;">Insulin</td>
+                <td style="padding: 15px 0; color: #555;">2-Hour serum insulin</td>
+                <td style="padding: 15px 0; color: #888;">mu U/ml</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-journey section-pad bg-light">
+      <div class="container reveal">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Development Journey</h2>
+        <div class="journey-grid">
+          <div class="journey-card">
+            <div class="step-label">v1</div>
+            <div class="journey-content">
+              <h3>Exploratory Data Analysis (EDA)</h3>
+              <p>Initial data cleaning and identifying correlations between glucose levels and outcomes.</p>
+            </div>
+          </div>
+          <div class="journey-card">
+            <div class="step-label">v2</div>
+            <div class="journey-content">
+              <h3>Baseline Model Construction</h3>
+              <p>Training an initial Logistic Regression benchmark.</p>
+            </div>
+          </div>
+          <div class="journey-card">
+            <div class="step-label">v3</div>
+            <div class="journey-content">
+              <h3>Handling Class Imbalance</h3>
+              <p>Implementing SMOTE to balance positive and negative diabetes cases.</p>
+            </div>
+          </div>
+          <div class="journey-card active">
+            <div class="step-label">v4</div>
+            <div class="journey-content">
+              <h3 style="display: flex; align-items: center; gap: 10px;">
+                Final Model Optimization 
+                <span style="background-color: #e6f4ea; color: #1e8e3e; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; border: 1px solid #cce8d6;">FINAL</span>
+              </h3>
+              <p>Fine-tuning hyperparameters to 500 trees and implementing specific feature importance pruning. Achieved peak ROC-AUC of 0.9429.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="performance-benchmarks section-pad bg-light" style="padding-top: 0;">
+      <div class="container reveal">
+        <div style="background-color: #f0f0f5; border-radius: 20px; padding: 40px;">
+          <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Model Performance Benchmark</h2>
+          <div class="benchmarks-list" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+            <div class="benchmark-item" style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; justify-content: space-between;">
+                <h3 style="font-size: 0.85rem; letter-spacing: 1px; margin: 0; color: #555;">SUPPORT VECTOR MACHINE</h3>
+                <span style="font-size: 0.9rem; font-weight: 600;">0.8235</span>
+              </div>
+              <div style="width: 100%; background-color: #e0e0e0; height: 10px; border-radius: 5px;">
+                <div style="width: 82.35%; background-color: #b0b0b0; height: 100%; border-radius: 5px;"></div>
+              </div>
+            </div>
+            
+            <div class="benchmark-item" style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; justify-content: space-between;">
+                <h3 style="font-size: 0.85rem; letter-spacing: 1px; margin: 0; color: #555;">K-NEAREST NEIGHBORS</h3>
+                <span style="font-size: 0.9rem; font-weight: 600;">0.8355</span>
+              </div>
+              <div style="width: 100%; background-color: #e0e0e0; height: 10px; border-radius: 5px;">
+                <div style="width: 83.55%; background-color: #b0b0b0; height: 100%; border-radius: 5px;"></div>
+              </div>
+            </div>
+            
+            <div class="benchmark-item active" style="background-color: white; border: 2px solid #5d5fef; padding: 20px; border-radius: 12px; display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <h3 style="font-size: 0.95rem; letter-spacing: 1px; margin: 0; color: #333;">RANDOM FOREST</h3>
+                  <span class="tag tag-purple-small" style="background-color: #5d5fef; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: bold;">BEST MODEL 🏆</span>
+                </div>
+                <span style="font-weight: bold; color: #5d5fef; font-size: 1.3rem;">0.9429</span>
+              </div>
+              <div style="width: 100%; background-color: #e0e0f8; height: 14px; border-radius: 7px;">
+                <div style="width: 94.29%; background-color: #5d5fef; height: 100%; border-radius: 7px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tech-implementation section-pad">
+      <div class="container reveal">
+        <h2 class="section-title">Advanced Techniques</h2>
+        <div class="tech-grid">
+          <div class="tech-card" style="text-align: center; background-color: #f9f9fb; border-radius: 16px;">
+            <div class="tech-icon" style="margin: 0 auto 15px auto; background-color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5d5fef" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+            </div>
+            <h3 style="font-size: 1.1rem;">Ensemble Learning</h3>
+            <p style="font-size: 0.95rem; color: #666;">Aggregating multiple decision trees to reduce variance and improve stability.</p>
+          </div>
+          <div class="tech-card" style="text-align: center; background-color: #f9f9fb; border-radius: 16px;">
+            <div class="tech-icon" style="margin: 0 auto 15px auto; background-color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5d5fef" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+            </div>
+            <h3 style="font-size: 1.1rem;">Feature Importance</h3>
+            <p style="font-size: 0.95rem; color: #666;">Quantifying the contribution of each physiological marker to the prediction.</p>
+          </div>
+          <div class="tech-card" style="text-align: center; background-color: #f9f9fb; border-radius: 16px;">
+            <div class="tech-icon" style="margin: 0 auto 15px auto; background-color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5d5fef" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+            <h3 style="font-size: 1.1rem;">Outlier Capping</h3>
+            <p style="font-size: 0.95rem; color: #666;">IQR-based capping to prevent extreme biometric values from skewing model splits.</p>
+          </div>
+          <div class="tech-card" style="text-align: center; background-color: #f9f9fb; border-radius: 16px;">
+            <div class="tech-icon" style="margin: 0 auto 15px auto; background-color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5d5fef" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            </div>
+            <h3 style="font-size: 1.1rem;">SMOTE</h3>
+            <p style="font-size: 0.95rem; color: #666;">Synthetic Minority Over-sampling Technique to address class imbalance issues.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reflections section-pad bg-light">
+      <div class="container reveal">
+        <div class="reflections-grid">
+          <div class="reflections-content">
+            <h2 style="margin-bottom: 1.5rem;">Key Lessons & Scientific Insights</h2>
+            <ul class="reflections-list">
+              <li style="margin-bottom: 20px;">
+                <div class="icon-check" style="background-color: #e6f4ea; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong>Ensemble over Individual:</strong> Random Forest consistently outperformed single decision trees by mitigating overfitting.
+                </div>
+              </li>
+              <li style="margin-bottom: 20px;">
+                <div class="icon-check" style="background-color: #e6f4ea; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong>Depth Control:</strong> Finding the optimal tree depth is crucial—too deep led to noise capture, too shallow led to underfitting.
+                </div>
+              </li>
+              <li style="margin-bottom: 20px;">
+                <div class="icon-check" style="background-color: #e6f4ea; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong>Interpretability:</strong> For clinical applications, the 'Gini importance' metrics were as valuable as the prediction itself.
+                </div>
+              </li>
+              <li>
+                <div class="icon-check" style="background-color: #e6f4ea; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                  <strong>Data Quality:</strong> IQR-based outlier capping significantly stabilized the forest variance during cross-validation.
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="researchers-note" style="background-color: white; border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); align-self: start;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+              <div style="background-color: #e0e0f8; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5d5fef" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              </div>
+              <h3 style="margin: 0; font-size: 1.2rem;">Researcher's Note</h3>
+            </div>
+            <p style="font-style: italic; color: #555; line-height: 1.8; margin-bottom: 30px; font-size: 1.05rem;">
+              "Transitioning from Logistic Regression to Random Forest revealed that non-linear relationships between glucose, insulin, and age were the missing link in reaching >94% accuracy. The sheer power of ensemble methods lies in their ability to uncover these complex interactions."
+            </p>
+            <div style="display: flex; align-items: center; gap: 15px;">
+              <img src="assets/images/aman-profile.jpg" alt="Aman" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; background-color: #eee;">
+              <div>
+                <strong style="display: block; font-size: 1rem; color: #333;">Aman</strong>
+                <span style="color: #888; font-size: 0.85rem;">ML Researcher & Data Scientist</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contributors section-pad">
+      <div class="container reveal">
+        <h2 class="section-title text-center" style="margin-bottom: 3rem;">Research Team</h2>
+        <div class="contributors-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+          <div class="contributor-card" style="background-color: #f9f9fb; border-radius: 16px; padding: 30px; text-align: center; opacity: 0.8;">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background-color: #e0e0e0; margin: 0 auto 20px auto;"></div>
+            <h3 style="margin-bottom: 8px;">Member 1</h3>
+            <p style="color: #666; font-size: 0.9rem;">Data Management</p>
+            <div style="margin-top: 20px; color: #aaa; display: flex; justify-content: center; gap: 10px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+          </div>
+          
+          <div class="contributor-card highlight" style="background-color: white; border-radius: 16px; padding: 40px 30px; text-align: center; border: 2px solid #5d5fef; position: relative; box-shadow: 0 10px 30px rgba(93,95,239,0.1);">
+            <span class="tag tag-purple-small" style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background-color: #5d5fef; color: white; padding: 6px 12px; border-radius: 6px; font-weight: bold; font-size: 0.75rem; letter-spacing: 1px;">LEAD ANALYST</span>
+            <div style="width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 20px auto; overflow: hidden; background-color: #eee; display: flex; align-items: center; justify-content: center;">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#a0a0a0" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Aman</h3>
+            <p style="color: #5d5fef; font-weight: 500; font-size: 0.95rem;">Random Forest & Feature Importance</p>
+            <div style="margin-top: 20px; color: #5d5fef; display: flex; justify-content: center; gap: 12px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+          </div>
+          
+          <div class="contributor-card" style="background-color: #f9f9fb; border-radius: 16px; padding: 30px; text-align: center; opacity: 0.8;">
+            <div style="width: 80px; height: 80px; border-radius: 50%; background-color: #e0e0e0; margin: 0 auto 20px auto;"></div>
+            <h3 style="margin-bottom: 8px;">Member 3</h3>
+            <p style="color: #666; font-size: 0.9rem;">Clinical Assessment</p>
+            <div style="margin-top: 20px; color: #aaa; display: flex; justify-content: center; gap: 10px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <p class="footer-name">Aman</p>
+      <p class="footer-copy">&copy; 2026 Aman. Built with intention.</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
