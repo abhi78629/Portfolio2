@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabetes Prediction using KNN | Abhishek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html#home">Abhishek</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+      <nav id="site-menu" class="site-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#projects">Work</a>
+        <a class="nav-link" href="index.html#skills">Skills</a>
+        <a class="nav-link" href="index.html#contact">Contact</a>
+        <a class="btn btn-primary hire-btn" href="index.html#contact">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-details">
+    <div class="container project-header-section reveal is-visible">
+      <a href="index.html#projects" class="back-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Projects
+      </a>
+      
+      <div class="project-tags">
+        <span class="tag tag-purple">Machine Learning - KNN</span>
+        <span class="tag tag-green">Health Tech</span>
+      </div>
+      
+      <h1>Diabetes Prediction using K-Nearest Neighbors</h1>
+      
+      <div class="author-info">
+        <img src="assets/images/abhishek-profile.png" alt="Abhishek" class="author-avatar">
+        <div class="author-text">
+          <p class="author-name">Written by <strong>Abhishek</strong></p>
+          <p class="author-role">ML/AI Algorithm Specialist &bull; Team Leader/Board Manager</p>
+        </div>
+      </div>
+      
+      <p class="project-summary">
+        A comprehensive study leveraging patient health metrics to predict diabetes onset. This project involved deep exploration of the Pima Indians Diabetes Database, implementing robust preprocessing pipelines and optimizing the K-Nearest Neighbors classifier to achieve high diagnostic sensitivity.
+      </p>
+      
+      <div class="project-actions">
+        <a href="https://github.com/" target="_blank" class="btn btn-primary">
+          View GitHub 
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 6px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </a>
+        <a href="#" class="btn btn-ghost">View Full Report</a>
+      </div>
+    </div>
+
+    <div class="container stats-strip reveal">
+      <div class="stat-card">
+        <p class="stat-label">ACCURACY</p>
+        <p class="stat-value text-purple">0.9384</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">NEIGHBORS</p>
+        <p class="stat-value">5</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">FEATURES TESTED</p>
+        <p class="stat-value">25</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-label">DATASET SIZE</p>
+        <p class="stat-value">768</p>
+      </div>
+    </div>
+
+    <section class="what-is-project section-pad bg-light">
+      <div class="container wip-grid reveal">
+        <div class="wip-content">
+          <h2>What is this project?</h2>
+          <p>The primary goal was to develop a diagnostic support tool that predicts whether a patient has diabetes based on diagnostic measurements. We utilized the Pima Indians Diabetes Database, a classic yet challenging dataset in the ML community.</p>
+          <p>The core challenge resided in the imbalanced nature of the dataset and the presence of missing values (e.g., zero in non-zero features like insulin and BMI). Our approach prioritizes a rigorous preprocessing stage over brute-force modeling.</p>
+        </div>
+        <div class="wip-table-wrapper">
+          <table class="feature-table">
+            <thead>
+              <tr>
+                <th colspan="2">Dataset Feature Reference</th>
+              </tr>
+              <tr class="subheader">
+                <th>Feature</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Glucose</td>
+                <td>Plasma glucose concentration</td>
+              </tr>
+              <tr>
+                <td>BMI</td>
+                <td>Body mass index (weight in kg/(height in m)^2)</td>
+              </tr>
+              <tr>
+                <td>Insulin</td>
+                <td>2-Hour serum insulin (mu U/ml)</td>
+              </tr>
+              <tr>
+                <td>DPF</td>
+                <td>Diabetes pedigree function</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="dev-journey section-pad">
+      <div class="container reveal">
+        <h2 class="section-title">Development Journey</h2>
+        <div class="journey-grid">
+          <div class="journey-card">
+            <span class="step-label">MILESTONE 1</span>
+            <h3>Initial Baseline</h3>
+            <p>Raw data training with basic KNN. Accuracy was low due to unscaled features and missing zeros.</p>
+          </div>
+          <div class="journey-card">
+            <span class="step-label">MILESTONE 2</span>
+            <h3>Data Cleaning</h3>
+            <p>Imputed missing values with median and performed Z-score normalization. Accuracy improved significantly.</p>
+          </div>
+          <div class="journey-card">
+            <span class="step-label">MILESTONE 3</span>
+            <h3>SMOTE Integration</h3>
+            <p>Balanced class labels using Synthetic Minority Oversampling to fix recall issues in positive cases.</p>
+          </div>
+          <div class="journey-card">
+            <span class="step-label">MILESTONE 4</span>
+            <h3>Hyperparameter Opt.</h3>
+            <p>Grid search for optimal k value and weight metrics. Found k=11 to be a local sweet spot.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="performance-benchmarks section-pad bg-light">
+      <div class="container reveal">
+        <h2 class="section-title">Model Performance Benchmarks</h2>
+        <div class="benchmarks-list">
+          <div class="benchmark-item">
+            <div class="bm-icon bg-green-light">RF</div>
+            <div class="bm-info">
+              <h3>Random Forest</h3>
+              <span class="tag tag-green-small">BEST OVERALL</span>
+            </div>
+            <div class="bm-score">
+              <span class="score">0.9429</span>
+              <span class="score-label">ROC AUC SCORE</span>
+            </div>
+          </div>
+          <div class="benchmark-item active">
+            <div class="bm-icon bg-purple">KNN</div>
+            <div class="bm-info">
+              <h3>K-Nearest Neighbors</h3>
+              <span class="tag tag-purple-small">CURRENT ARCHITECTURE</span>
+            </div>
+            <div class="bm-score text-purple">
+              <span class="score">0.9384</span>
+              <span class="score-label">ROC AUC SCORE</span>
+            </div>
+          </div>
+          <div class="benchmark-item">
+            <div class="bm-icon bg-gray">SVM</div>
+            <div class="bm-info">
+              <h3>Support Vector Machine</h3>
+              <span class="tag-label">Secondary Baseline</span>
+            </div>
+            <div class="bm-score">
+              <span class="score">0.9336</span>
+              <span class="score-label">ROC AUC SCORE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tech-implementation section-pad">
+      <div class="container reveal">
+        <h2 class="section-title">Technical Implementation</h2>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <div class="tech-icon bg-purple-light">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5d5fef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            </div>
+            <h3>Data Preprocessing</h3>
+            <p>Handling missing values through iterative imputer and ensuring all numerical inputs are on the same scale for distance calculation.</p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon bg-blue-light">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2d9cdb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+            </div>
+            <h3>SMOTE Oversampling</h3>
+            <p>Synthetically balancing the dataset to prevent the model from becoming biased towards non-diabetic predictions.</p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon bg-green-light2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+            <h3>Hyperparameter Tuning</h3>
+            <p>Executing cross-validated grid searches across k-values, distance metrics (Manhattan vs. Euclidean), and weighting schemes.</p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon bg-red-light">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#eb5757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3>Model Evaluation</h3>
+            <p>Moving beyond simple accuracy to focus on Precision/Recall scores and ROC-AUC for clinical relevance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reflections section-pad bg-light">
+      <div class="container reveal">
+        <div class="reflections-grid">
+          <div class="reflections-image">
+            <img src="assets/images/project-diabetes.svg" alt="Laptop displaying data" width="500" height="400">
+          </div>
+          <div class="reflections-content">
+            <h2>Personal Reflections</h2>
+            <ul class="reflections-list">
+              <li>
+                <div class="icon-check">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5d5fef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div>
+                  <strong>Data is King:</strong> No amount of model tuning could fix what proper imputation and scaling achieved in v2.0.
+                </div>
+              </li>
+              <li>
+                <div class="icon-check">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5d5fef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div>
+                  <strong>The 'k' Paradox:</strong> I learned that a higher 'k' isn't always better. It's a delicate balance between noise filtering and detail preservation.
+                </div>
+              </li>
+              <li>
+                <div class="icon-check">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5d5fef" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div>
+                  <strong>Clinical Nuance:</strong> In healthcare, False Negatives are more dangerous than False Positives. This shifted our optimization focus toward Recall.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contributors section-pad">
+      <div class="container reveal">
+        <h2 class="section-title text-center">Project Contributors</h2>
+        <div class="contributors-grid">
+          <div class="contributor-card">
+            <img src="assets/images/abhishek-profile.png" alt="Mentor 1" class="contributor-avatar">
+            <h3>Mentor 1</h3>
+            <p>Senior Project Specialist</p>
+          </div>
+          <div class="contributor-card">
+            <img src="assets/images/abhishek-profile.png" alt="Mentor 2" class="contributor-avatar">
+            <h3>Mentor 2</h3>
+            <p>Data &amp; ML Specialist</p>
+          </div>
+          <div class="contributor-card highlight">
+            <img src="assets/images/abhishek-profile.png" alt="Abhishek" class="contributor-avatar">
+            <h3>Abhishek (Member 3)</h3>
+            <p>KNN Lead &amp; Team Leader/Board</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <p class="footer-name">Abhishek</p>
+      <p class="footer-copy">&copy; 2026 Abhishek. Built with intention.</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
